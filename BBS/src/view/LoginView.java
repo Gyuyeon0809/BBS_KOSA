@@ -14,8 +14,7 @@ public class LoginView {
 		System.out.print("비밀번호 : ");
 		String user_pw = sc.next();
 		if(udao.login(user_id, user_pw)) {
-			System.out.println(user_id+"님 어서오세요!");
-//			new MainView;
+			new MainView();
 		}else {
 			System.out.println("로그인 실패/다시시도해주세요");
 		}

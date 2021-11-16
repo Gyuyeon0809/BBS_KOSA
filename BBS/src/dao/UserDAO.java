@@ -26,6 +26,8 @@ public class UserDAO {
 		HashSet<String> rs = conn.select(0,user_id);
 		for (String line : rs) {
 			if(line.split("\t")[1].equals(user_pw)) {
+				
+				Session.put("loginUser", new UserDTO(line.split("\t")));
 				return true;
 			}
 		}
