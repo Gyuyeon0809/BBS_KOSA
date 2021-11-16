@@ -1,5 +1,7 @@
 package view;
 
+
+import java.io.IOException;
 import java.util.Scanner;
 
 import dao.BBSTableDAO;
@@ -16,9 +18,19 @@ public class MainView {
 			while (true) {
 				System.out.println(loginUser.username+"님"+"("+loginUser.userid+")"+"어서오세요!");
 				System.out.println("글목록\n번호\t글쓴이\t제목\t읽은수");
+				BBSTableDAO tabledao = new BBSTableDAO();
+				try {
+					tabledao.list();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				int i = sc.nextInt();
 				if(i == 1) {
-					new BBSWriteView();
+					
+						new BBSWriteView();
+					 
+					
 				}else {
 					System.out.println("안녕히가세요");
 					break;

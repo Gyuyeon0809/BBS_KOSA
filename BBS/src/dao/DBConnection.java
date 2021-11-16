@@ -13,6 +13,7 @@ public class DBConnection {
 	public DBConnection(String file) {
 		this.file = file;
 	}
+
 	//받아온 데이터를 세팅되어있는 file에 그대로 입력해주는 메소드
 	boolean insert(String data) {
 		try {
